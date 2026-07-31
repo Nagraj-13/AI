@@ -69,7 +69,10 @@ export async function POST(req: Request) {
     }
 
     // Verify password if user has a password set
-    if (user.password && password) {
+    if (user.password) {
+      if (!password) {
+        return NextResponse.json({ success: false, error: "Password is required to sign in." }, { status: 400 });
+      }
       const isValid = verifyPassword(password, user.password);
       if (!isValid) {
         return NextResponse.json({ success: false, error: "Incorrect password. Please try again." }, { status: 401 });

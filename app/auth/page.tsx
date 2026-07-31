@@ -74,7 +74,8 @@ function AuthForm() {
       window.dispatchEvent(new Event("auth-changed"));
 
       setTimeout(() => {
-        if (role === "RECRUITER") {
+        const targetRole = data.data?.role || role;
+        if (targetRole === "RECRUITER") {
           router.push("/recruiter/dashboard");
         } else {
           router.push("/candidate/dashboard");
