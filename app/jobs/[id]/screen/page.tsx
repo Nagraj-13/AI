@@ -44,17 +44,37 @@ export default function JobScreeningPage({ params }: { params: Promise<{ id: str
   const fetchJobData = async () => {
     setIsLoading(true);
     try {
+      let recruiterId = "";
+      try {
+        const stored = localStorage.getItem("user_session");
+        if (stored) {
+          const sess = JSON.parse(stored);
+          recruiterId = sess.id || "";
+        }
+      } catch {}
+
+      const jobsUrl = recruiterId ? `/api/jobs?createdById=${recruiterId}` : "/api/jobs";
+      const candUrl = recruiterId ? `/api/screen?jobId=${jobId}&createdById=${recruiterId}` : `/api/screen?jobId=${jobId}`;
+
       const [jobsRes, candRes] = await Promise.all([
-        fetch("/api/jobs"),
-        fetch(`/api/screen?jobId=${jobId}`),
+        fetch(jobsUrl),
+        fetch(candUrl),
       ]);
 
       const jobsData = await jobsRes.json();
       const candData = await candRes.json();
 
       if (jobsData.success) {
-        const foundJob = jobsData.data.find((j: MockJob) => j.id === jobId) || jobsData.data[0];
-        setJob(foundJob);
+        const foundJob = jobsData.data.find((j: MockJob) => j.id === jobId);
+        if (foundJob) {
+          setJob(foundJob);
+        } else if (recruiterId) {
+          // Job position belongs to another recruiter or does not exist — redirect to recruiter dashboard
+          router.replace("/recruiter/dashboard");
+          return;
+        } else if (jobsData.data.length > 0) {
+          setJob(jobsData.data[0]);
+        }
       }
 
       if (candData.success) {

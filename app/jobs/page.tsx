@@ -6,10 +6,31 @@ import CreateJobModal from "@/components/jobs/CreateJobModal";
 import { MockJob } from "@/lib/db/mockData";
 import { Plus, Search, Briefcase } from "lucide-react";
 
+import { useRouter } from "next/navigation";
+
 export default function JobsPage() {
+  const router = useRouter();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("user_session");
+      if (stored) {
+        const session = JSON.parse(stored);
+        if (session.role === "RECRUITER") {
+          router.replace("/recruiter/dashboard");
+          return;
+        } else if (session.role === "CANDIDATE") {
+          router.replace("/candidate/dashboard");
+          return;
+        }
+      }
+    } catch {}
+
+    fetchJobs();
+  }, [router]);
 
   const fetchJobs = async () => {
     try {
@@ -20,10 +41,6 @@ export default function JobsPage() {
       console.error("Jobs page fetch error:", err);
     }
   };
-
-  useEffect(() => {
-    fetchJobs();
-  }, []);
 
   const filteredJobs = jobs.filter(
     (j) =>
