@@ -1,0 +1,105 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  name         String
+  password     String        @default("")
+  role         String        @default("RECRUITER") // "RECRUITER" | "CANDIDATE"
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  jobs         Job[]
+  applications Application[]
+  resumes      Resume[]
+}
+
+model Job {
+  id              String           @id @default(uuid())
+  title           String
+  department      String
+  location        String
+  type            String           @default("Full-Time")
+  experienceYears Int
+  requiredSkills  String           // Comma-separated or JSON string
+  description     String
+  status          String           @default("active")
+  createdById     String?
+  createdBy       User?            @relation(fields: [createdById], references: [id])
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  resumes         Resume[]
+  candidateScores CandidateScore[]
+  applications    Application[]
+}
+
+model Resume {
+  id              String          @id @default(uuid())
+  jobId           String?
+  job             Job?            @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidateId     String?
+  candidate       User?           @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  candidateName   String
+  email           String?
+  phone           String?
+  fileKey         String
+  fileUrl         String?
+  fileType        String
+  rawText         String
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  parsedResume    ParsedResume?
+  candidateScore  CandidateScore?
+  applications    Application[]
+}
+
+model ParsedResume {
+  id                   String   @id @default(uuid())
+  resumeId             String   @unique
+  resume               Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  skills               String   // Comma-separated string
+  totalExperienceYears Float    @default(0)
+  experienceJson       String   // JSON string of { company, title, years, description }[]
+  educationJson        String   // JSON string of { degree, institution, year }[]
+  projectsJson         String   // JSON string of { name, description, tech }[]
+  certifications       String   // Comma-separated
+  embeddingJson        String   // 768-dim vector embedding as JSON array
+  createdAt            DateTime @default(now())
+}
+
+model CandidateScore {
+  id                 String   @id @default(uuid())
+  jobId              String
+  job                Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  resumeId           String   @unique
+  resume             Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  overallScore       Float
+  embeddingScore     Float
+  llmScore           Float
+  experienceScore    Float
+  skillScore         Float
+  recommendation     String   // "Strong Fit" | "Good Fit" | "Potential Fit" | "Not a Fit"
+  strengthsJson      String   // JSON array of strings
+  missingSkillsJson  String   // JSON array of strings
+  qualitativeSummary String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model Application {
+  id          String   @id @default(uuid())
+  jobId       String
+  job         Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidateId String
+  candidate   User     @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  resumeId    String
+  resume      Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  status      String   @default("SUBMITTED")
+  createdAt   DateTime @default(now())
+}

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+  --surface: #0a0a0a;
+  --surface-hover: #121212;
+  --border: #222222;
+  --border-hover: #333333;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Vercel Style Glass / Surface Panels */
+.vercel-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.vercel-panel:hover {
+  border-color: var(--border-hover);
+}
+
+.vercel-card {
+  background-color: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  transition: all 0.2s ease;
+}
+
+.vercel-card:hover {
+  background-color: #141414;
+  border-color: #333333;
+}
+
+/* Vercel Grid Background Pattern */
+.vercel-grid-bg {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
