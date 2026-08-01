@@ -4,6 +4,12 @@ An enterprise-grade, AI-powered **Resume Screening, Ranking, and Candidate Job R
 
 ---
 
+## 📸 Platform Preview
+
+![Landing Page](./docs/screenshots/01_landing_page.png)
+
+---
+
 ## ✨ Features & Architecture
 
 ### 💼 Recruiter Command Center & Screening Hub
@@ -41,6 +47,7 @@ An enterprise-grade, AI-powered **Resume Screening, Ranking, and Candidate Job R
 - **Database & ORM:** Neon Serverless PostgreSQL, Prisma ORM
 - **AI & Machine Learning:** `@google/genai` (Gemini 2.0 Flash), `groq-sdk` (Llama 3.3 70B), Vector Cosine Similarity
 - **Document Parsers:** `pdf-parse`, `mammoth`
+- **Testing:** Playwright (End-to-End API Tests)
 - **Deployment Target:** Vercel
 
 ---
@@ -69,7 +76,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 GROQ_API_KEY=your_groq_api_key_here
 
 # Database Connection URL (Neon Postgres)
-DATABASE_URL=""
+DATABASE_URL="postgresql://user:pass@host/db?sslmode=require"
 
 # Application Environment
 NODE_ENV=development
@@ -82,14 +89,125 @@ npx prisma generate
 npx prisma db push
 ```
 
-*Note: `npx prisma generate` creates the TypeScript types for your database models in `node_modules/@prisma/client`.*
-
 ### 5. Run Development Server
 Start the Next.js local development server:
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🗺️ Step-by-Step Usage Guide
+
+### Step 1 — Landing Page
+
+Visit `http://localhost:3000`. The landing page lets you choose between **Recruiter Command Center** and **Candidate & Student Portal**.
+
+![Landing Page](./docs/screenshots/01_landing_page.png)
+
+---
+
+### Step 2 — Sign In
+
+Click **Sign In** in the top navbar. Select **Recruiter / HR** or **Candidate / Student**, enter your credentials, and click **Sign In**.
+
+![Sign In Page](./docs/screenshots/02_signin_page.png)
+
+---
+
+### Step 3 — Create Account
+
+Switch to the **Create Account** tab. Choose your role, fill in your name, email, and password, then click **Create Account**.
+
+![Create Account](./docs/screenshots/03_signup_page.png)
+
+---
+
+### Step 4 — Recruiter Dashboard
+
+After signing in as a Recruiter, you see the **Command Center** with stats for Open Jobs, Screened Resumes, Average Candidate Score, and AI Engine status. Click **+ Post New Position** to create your first job.
+
+![Recruiter Dashboard](./docs/screenshots/04_recruiter_dashboard.png)
+
+---
+
+### Step 5 — Post a New Job Position
+
+Fill in the **Post New Job Opening** modal with:
+- Job Title, Department, Min Experience
+- Required Technical Skills (comma-separated)
+- Full Job Description
+
+Click **✦ Create Position & Ready AI** to publish the role.
+
+![Create Job Form](./docs/screenshots/05_create_job_form.png)
+
+---
+
+### Step 6 — Job Positions & Screening Hub
+
+The `/jobs` page shows all active positions as cards with department, location, skills, screened count, and average score. Use the search bar to filter by title, department, or skill. Click **Screen Resumes →** to open the candidate screening view for any position.
+
+![Jobs Screening Hub](./docs/screenshots/08_jobs_browse.png)
+
+---
+
+### Step 7 — Candidate Screening Hub
+
+Click **Screen Resumes →** on a job card to open the full screening view where you can upload resumes, inspect AI-ranked candidates, and view per-candidate score breakdowns.
+
+![Candidate Screening](./docs/screenshots/06_screening_hub.png)
+
+---
+
+### Step 8 — Candidate / Student Portal
+
+After signing in as a **Candidate**, you see the **Student Portal** with:
+- A drag-and-drop resume upload area (PDF, DOCX, or paste text)
+- All available job openings with skill tags and experience requirements
+- **Apply** button on each job — triggers instant AI relevance scoring after resume upload
+
+![Candidate Dashboard](./docs/screenshots/07_candidate_dashboard.png)
+
+---
+
+### Step 9 — AI Settings & Scoring Configuration
+
+Navigate to **AI Settings** (top navbar, recruiter only) to view:
+- **Primary Evaluation Engine** status (Gemini 2.5 Flash)
+- **Failover Engine** status (Groq Llama 3.3 — Standby Ready)
+- **Resume Storage** provider (Local Disk or Cloudflare R2)
+- **Scoring Formula** breakdown (40% Vector + 40% LLM + 10% Exp + 10% Skill)
+- Environment variable reference for deployment
+
+![AI Settings](./docs/screenshots/09_settings_page.png)
+
+---
+
+## 🧪 Running Tests
+
+The project includes a full **End-to-End (E2E) test suite** using Playwright that tests all API routes against the real database — no mocking.
+
+```bash
+# Run all tests except AI (fast, ~1 min)
+npm run test:api
+
+# Run all tests including AI screening (calls Gemini, ~3–5 min)
+npm test
+
+# Open HTML test report
+npm run test:report
+```
+
+Test suites cover:
+| Suite | Tests | Coverage |
+|-------|-------|---------|
+| `auth.test.ts` | 11 | Signup, login, validation, email normalization |
+| `jobs.test.ts` | 10 | GET/POST jobs, filter by recruiter, skills array |
+| `applications.test.ts` | 9 | Submit app, idempotency, AI score, auto-resolve resume |
+| `settings.test.ts` | 7 | Provider status, default weights, public access |
+| `screen.test.ts` | `@ai` | Full AI evaluation, skill parsing, missing params |
 
 ---
 
