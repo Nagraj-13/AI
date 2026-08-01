@@ -102,7 +102,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Step 1 — Landing Page
 
-Visit `http://localhost:3000`. The landing page lets you choose between **Recruiter Command Center** and **Candidate & Student Portal**.
+Visit `http://localhost:3000`. The home page introduces both portals. Choose **Recruiter Command Center** to post jobs and screen candidates, or **Candidate & Student Portal** to upload your resume and apply to positions.
 
 ![Landing Page](./docs/screenshots/01_landing_page.png)
 
@@ -110,7 +110,7 @@ Visit `http://localhost:3000`. The landing page lets you choose between **Recrui
 
 ### Step 2 — Sign In
 
-Click **Sign In** in the top navbar. Select **Recruiter / HR** or **Candidate / Student**, enter your credentials, and click **Sign In**.
+Click **Sign In** in the top navbar. Select your account type — **Recruiter / HR** or **Candidate / Student** — enter your email and password, then click **Sign In as Recruiter** or **Sign In as Candidate**.
 
 ![Sign In Page](./docs/screenshots/02_signin_page.png)
 
@@ -118,15 +118,21 @@ Click **Sign In** in the top navbar. Select **Recruiter / HR** or **Candidate / 
 
 ### Step 3 — Create Account
 
-Switch to the **Create Account** tab. Choose your role, fill in your name, email, and password, then click **Create Account**.
+Don't have an account yet? Click **Create Account** (tab or link). Choose your role (Recruiter or Candidate/Student), fill in your name, email, and a password (min 6 characters), then click **Create Account** to register instantly.
 
 ![Create Account](./docs/screenshots/03_signup_page.png)
 
 ---
 
-### Step 4 — Recruiter Dashboard
+### Step 4 — Recruiter Dashboard (Command Center)
 
-After signing in as a Recruiter, you see the **Command Center** with stats for Open Jobs, Screened Resumes, Average Candidate Score, and AI Engine status. Click **+ Post New Position** to create your first job.
+After signing in as a Recruiter you land on the **Command Center**, which shows live stats:
+- **Open Jobs** — total active job positions you've posted
+- **Screened Resumes** — total candidates evaluated by the AI engine
+- **Avg Candidate Score** — aggregate fit score across all your positions
+- **AI Engine** — real-time status (Intelligent AI Engine — active)
+
+Click **+ Post New Position** to create your first job opening.
 
 ![Recruiter Dashboard](./docs/screenshots/04_recruiter_dashboard.png)
 
@@ -134,12 +140,13 @@ After signing in as a Recruiter, you see the **Command Center** with stats for O
 
 ### Step 5 — Post a New Job Position
 
-Fill in the **Post New Job Opening** modal with:
-- Job Title, Department, Min Experience
-- Required Technical Skills (comma-separated)
-- Full Job Description
+The **Post New Job Opening** modal lets you define the role requirements that drive the AI evaluation:
+- **Job Title** — e.g., *Senior Full-Stack AI Engineer*
+- **Department** and **Min Experience (Years)**
+- **Required Technical Skills** — comma-separated, e.g., `Next.js, TypeScript, React, PostgreSQL`
+- **Full Job Description** — role summary, key responsibilities, and expected background
 
-Click **✦ Create Position & Ready AI** to publish the role.
+Click **✦ Create Position & Ready AI** to publish the role and prime the AI evaluation pipeline for incoming resumes.
 
 ![Create Job Form](./docs/screenshots/05_create_job_form.png)
 
@@ -147,26 +154,39 @@ Click **✦ Create Position & Ready AI** to publish the role.
 
 ### Step 6 — Job Positions & Screening Hub
 
-The `/jobs` page shows all active positions as cards with department, location, skills, screened count, and average score. Use the search bar to filter by title, department, or skill. Click **Screen Resumes →** to open the candidate screening view for any position.
+The **Job Positions & Screening Hub** (`/jobs`) lists all active positions as cards showing:
+- Department badge and **Active** status indicator
+- Location, experience requirement, and job type
+- Required skill tags at a glance
+- **Screened** candidate count and **Avg** fit score per position
+- **Screen Resumes →** button to open the candidate screening view for that job
 
-![Jobs Screening Hub](./docs/screenshots/08_jobs_browse.png)
+Use the search bar to instantly filter by title, department, or any required skill.
+
+![Jobs & Screening Hub](./docs/screenshots/08_jobs_browse.png)
 
 ---
 
 ### Step 7 — Candidate Screening Hub
 
-Click **Screen Resumes →** on a job card to open the full screening view where you can upload resumes, inspect AI-ranked candidates, and view per-candidate score breakdowns.
+Click **Screen Resumes →** on any job card to open the full **Candidate Screening Hub** for that position. Here you can:
+- Upload resume PDFs / DOCX files individually or in batch
+- View all screened candidates **ranked by AI fit score** (highest first)
+- Inspect per-candidate score breakdown: embedding similarity, LLM qualitative score, experience ratio, and skill coverage
+- View AI-generated strengths, missing skills, and a qualitative summary for each candidate
 
-![Candidate Screening](./docs/screenshots/06_screening_hub.png)
+![Candidate Screening Hub](./docs/screenshots/06_screening_hub.png)
 
 ---
 
 ### Step 8 — Candidate / Student Portal
 
-After signing in as a **Candidate**, you see the **Student Portal** with:
-- A drag-and-drop resume upload area (PDF, DOCX, or paste text)
-- All available job openings with skill tags and experience requirements
-- **Apply** button on each job — triggers instant AI relevance scoring after resume upload
+After signing in as a **Candidate / Student**, you see the **Student Portal** which shows:
+- **Resume Upload section** — drag-and-drop a PDF/DOCX file or paste resume text manually into the editor
+- **Available Job Openings** — all active positions with skill tags and experience level
+- Each job card displays a *"Resume Required"* notice until a resume is uploaded
+
+Upload your resume first, then click **Apply** on any job listing to instantly receive your AI candidate match score, strengths, missing skills, and a fit recommendation.
 
 ![Candidate Dashboard](./docs/screenshots/07_candidate_dashboard.png)
 
@@ -174,14 +194,30 @@ After signing in as a **Candidate**, you see the **Student Portal** with:
 
 ### Step 9 — AI Settings & Scoring Configuration
 
-Navigate to **AI Settings** (top navbar, recruiter only) to view:
-- **Primary Evaluation Engine** status (Gemini 2.5 Flash)
-- **Failover Engine** status (Groq Llama 3.3 — Standby Ready)
-- **Resume Storage** provider (Local Disk or Cloudflare R2)
-- **Scoring Formula** breakdown (40% Vector + 40% LLM + 10% Exp + 10% Skill)
-- Environment variable reference for deployment
+Navigate to **AI Settings** (top navbar, available to recruiters) to inspect the full system configuration:
+- **Primary Candidate Evaluation Engine** — Active status, semantic vector matcher, and model name
+- **High-Availability Failover Engine** — Standby Ready; auto-activates if the primary engine hits rate limits
+- **Encrypted Resume Repository** — shows whether resumes are stored on Local Disk or Cloudflare R2
+- **Scoring Formula Preset** — live breakdown: `40% Vector + 40% LLM + 10% Exp + 10% Skill`
+- **Environment Variable Keys** — reference card for `.env` configuration during deployment
 
 ![AI Settings](./docs/screenshots/09_settings_page.png)
+
+---
+
+### 📋 Screenshot Index
+
+| Step | Screenshot | Description |
+|------|------------|-------------|
+| 1 | [01_landing_page.png](./docs/screenshots/01_landing_page.png) | Home / Landing Page — Portal selection |
+| 2 | [02_signin_page.png](./docs/screenshots/02_signin_page.png) | Sign In — Recruiter & Candidate login |
+| 3 | [03_signup_page.png](./docs/screenshots/03_signup_page.png) | Create Account — Role selection & registration |
+| 4 | [04_recruiter_dashboard.png](./docs/screenshots/04_recruiter_dashboard.png) | Recruiter Command Center Dashboard |
+| 5 | [05_create_job_form.png](./docs/screenshots/05_create_job_form.png) | Post New Job Opening modal |
+| 6 | [08_jobs_browse.png](./docs/screenshots/08_jobs_browse.png) | Job Positions & Screening Hub |
+| 7 | [06_screening_hub.png](./docs/screenshots/06_screening_hub.png) | Candidate Screening & AI Rankings |
+| 8 | [07_candidate_dashboard.png](./docs/screenshots/07_candidate_dashboard.png) | Candidate / Student Portal |
+| 9 | [09_settings_page.png](./docs/screenshots/09_settings_page.png) | AI Settings & Scoring Configuration |
 
 ---
 
