@@ -4,6 +4,12 @@ An enterprise-grade, AI-powered **Resume Screening, Ranking, and Candidate Job R
 
 ---
 
+## 📸 Platform Preview
+
+![Landing Page](./docs/screenshots/01_landing_page.png)
+
+---
+
 ## ✨ Features & Architecture
 
 ### 💼 Recruiter Command Center & Screening Hub
@@ -41,6 +47,7 @@ An enterprise-grade, AI-powered **Resume Screening, Ranking, and Candidate Job R
 - **Database & ORM:** Neon Serverless PostgreSQL, Prisma ORM
 - **AI & Machine Learning:** `@google/genai` (Gemini 2.0 Flash), `groq-sdk` (Llama 3.3 70B), Vector Cosine Similarity
 - **Document Parsers:** `pdf-parse`, `mammoth`
+- **Testing:** Playwright (End-to-End API Tests)
 - **Deployment Target:** Vercel
 
 ---
@@ -69,7 +76,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 GROQ_API_KEY=your_groq_api_key_here
 
 # Database Connection URL (Neon Postgres)
-DATABASE_URL=""
+DATABASE_URL="postgresql://user:pass@host/db?sslmode=require"
 
 # Application Environment
 NODE_ENV=development
@@ -82,14 +89,161 @@ npx prisma generate
 npx prisma db push
 ```
 
-*Note: `npx prisma generate` creates the TypeScript types for your database models in `node_modules/@prisma/client`.*
-
 ### 5. Run Development Server
 Start the Next.js local development server:
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🗺️ Step-by-Step Usage Guide
+
+### Step 1 — Landing Page
+
+Visit `http://localhost:3000`. The home page introduces both portals. Choose **Recruiter Command Center** to post jobs and screen candidates, or **Candidate & Student Portal** to upload your resume and apply to positions.
+
+![Landing Page](./docs/screenshots/01_landing_page.png)
+
+---
+
+### Step 2 — Sign In
+
+Click **Sign In** in the top navbar. Select your account type — **Recruiter / HR** or **Candidate / Student** — enter your email and password, then click **Sign In as Recruiter** or **Sign In as Candidate**.
+
+![Sign In Page](./docs/screenshots/02_signin_page.png)
+
+---
+
+### Step 3 — Create Account
+
+Don't have an account yet? Click **Create Account** (tab or link). Choose your role (Recruiter or Candidate/Student), fill in your name, email, and a password (min 6 characters), then click **Create Account** to register instantly.
+
+![Create Account](./docs/screenshots/03_signup_page.png)
+
+---
+
+### Step 4 — Recruiter Dashboard (Command Center)
+
+After signing in as a Recruiter you land on the **Command Center**, which shows live stats:
+- **Open Jobs** — total active job positions you've posted
+- **Screened Resumes** — total candidates evaluated by the AI engine
+- **Avg Candidate Score** — aggregate fit score across all your positions
+- **AI Engine** — real-time status (Intelligent AI Engine — active)
+
+Click **+ Post New Position** to create your first job opening.
+
+![Recruiter Dashboard](./docs/screenshots/04_recruiter_dashboard.png)
+
+---
+
+### Step 5 — Post a New Job Position
+
+The **Post New Job Opening** modal lets you define the role requirements that drive the AI evaluation:
+- **Job Title** — e.g., *Senior Full-Stack AI Engineer*
+- **Department** and **Min Experience (Years)**
+- **Required Technical Skills** — comma-separated, e.g., `Next.js, TypeScript, React, PostgreSQL`
+- **Full Job Description** — role summary, key responsibilities, and expected background
+
+Click **✦ Create Position & Ready AI** to publish the role and prime the AI evaluation pipeline for incoming resumes.
+
+![Create Job Form](./docs/screenshots/05_create_job_form.png)
+
+---
+
+### Step 6 — Job Positions & Screening Hub
+
+The **Job Positions & Screening Hub** (`/jobs`) lists all active positions as cards showing:
+- Department badge and **Active** status indicator
+- Location, experience requirement, and job type
+- Required skill tags at a glance
+- **Screened** candidate count and **Avg** fit score per position
+- **Screen Resumes →** button to open the candidate screening view for that job
+
+Use the search bar to instantly filter by title, department, or any required skill.
+
+![Jobs & Screening Hub](./docs/screenshots/08_jobs_browse.png)
+
+---
+
+### Step 7 — Candidate Screening Hub
+
+Click **Screen Resumes →** on any job card to open the full **Candidate Screening Hub** for that position. Here you can:
+- Upload resume PDFs / DOCX files individually or in batch
+- View all screened candidates **ranked by AI fit score** (highest first)
+- Inspect per-candidate score breakdown: embedding similarity, LLM qualitative score, experience ratio, and skill coverage
+- View AI-generated strengths, missing skills, and a qualitative summary for each candidate
+
+![Candidate Screening Hub](./docs/screenshots/06_screening_hub.png)
+
+---
+
+### Step 8 — Candidate / Student Portal
+
+After signing in as a **Candidate / Student**, you see the **Student Portal** which shows:
+- **Resume Upload section** — drag-and-drop a PDF/DOCX file or paste resume text manually into the editor
+- **Available Job Openings** — all active positions with skill tags and experience level
+- Each job card displays a *"Resume Required"* notice until a resume is uploaded
+
+Upload your resume first, then click **Apply** on any job listing to instantly receive your AI candidate match score, strengths, missing skills, and a fit recommendation.
+
+![Candidate Dashboard](./docs/screenshots/07_candidate_dashboard.png)
+
+---
+
+### Step 9 — AI Settings & Scoring Configuration
+
+Navigate to **AI Settings** (top navbar, available to recruiters) to inspect the full system configuration:
+- **Primary Candidate Evaluation Engine** — Active status, semantic vector matcher, and model name
+- **High-Availability Failover Engine** — Standby Ready; auto-activates if the primary engine hits rate limits
+- **Encrypted Resume Repository** — shows whether resumes are stored on Local Disk or Cloudflare R2
+- **Scoring Formula Preset** — live breakdown: `40% Vector + 40% LLM + 10% Exp + 10% Skill`
+- **Environment Variable Keys** — reference card for `.env` configuration during deployment
+
+![AI Settings](./docs/screenshots/09_settings_page.png)
+
+---
+
+### 📋 Screenshot Index
+
+| Step | Screenshot | Description |
+|------|------------|-------------|
+| 1 | [01_landing_page.png](./docs/screenshots/01_landing_page.png) | Home / Landing Page — Portal selection |
+| 2 | [02_signin_page.png](./docs/screenshots/02_signin_page.png) | Sign In — Recruiter & Candidate login |
+| 3 | [03_signup_page.png](./docs/screenshots/03_signup_page.png) | Create Account — Role selection & registration |
+| 4 | [04_recruiter_dashboard.png](./docs/screenshots/04_recruiter_dashboard.png) | Recruiter Command Center Dashboard |
+| 5 | [05_create_job_form.png](./docs/screenshots/05_create_job_form.png) | Post New Job Opening modal |
+| 6 | [08_jobs_browse.png](./docs/screenshots/08_jobs_browse.png) | Job Positions & Screening Hub |
+| 7 | [06_screening_hub.png](./docs/screenshots/06_screening_hub.png) | Candidate Screening & AI Rankings |
+| 8 | [07_candidate_dashboard.png](./docs/screenshots/07_candidate_dashboard.png) | Candidate / Student Portal |
+| 9 | [09_settings_page.png](./docs/screenshots/09_settings_page.png) | AI Settings & Scoring Configuration |
+
+---
+
+## 🧪 Running Tests
+
+The project includes a full **End-to-End (E2E) test suite** using Playwright that tests all API routes against the real database — no mocking.
+
+```bash
+# Run all tests except AI (fast, ~1 min)
+npm run test:api
+
+# Run all tests including AI screening (calls Gemini, ~3–5 min)
+npm test
+
+# Open HTML test report
+npm run test:report
+```
+
+Test suites cover:
+| Suite | Tests | Coverage |
+|-------|-------|---------|
+| `auth.test.ts` | 11 | Signup, login, validation, email normalization |
+| `jobs.test.ts` | 10 | GET/POST jobs, filter by recruiter, skills array |
+| `applications.test.ts` | 9 | Submit app, idempotency, AI score, auto-resolve resume |
+| `settings.test.ts` | 7 | Provider status, default weights, public access |
+| `screen.test.ts` | `@ai` | Full AI evaluation, skill parsing, missing params |
 
 ---
 
