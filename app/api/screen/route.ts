@@ -30,16 +30,25 @@ export async function GET(req: Request) {
       include: {
         parsedResume: true,
         candidateScore: true,
+        job: true,
+        applications: {
+          include: {
+            job: true,
+          },
+        },
       },
     });
 
-    const formattedCandidates = resumes.map((r) => {
+    const formattedCandidates = resumes.map((r: any) => {
       const parsed = r.parsedResume;
       const score = r.candidateScore;
+      const targetJob = r.job || (r.applications && r.applications[0]?.job);
 
       return {
         id: r.id,
-        jobId: r.jobId || "",
+        jobId: r.jobId || targetJob?.id || "",
+        jobTitle: targetJob?.title || "",
+        jobDepartment: targetJob?.department || "",
         name: r.candidateName,
         email: r.email || "",
         phone: r.phone || "",
@@ -48,11 +57,11 @@ export async function GET(req: Request) {
         rawText: r.rawText,
         parsedResume: {
           totalExperienceYears: parsed?.totalExperienceYears || 0,
-          skills: parsed?.skills ? parsed.skills.split(",").map((s) => s.trim()) : [],
+          skills: parsed?.skills ? parsed.skills.split(",").map((s: string) => s.trim()) : [],
           experience: parsed?.experienceJson ? JSON.parse(parsed.experienceJson) : [],
           education: parsed?.educationJson ? JSON.parse(parsed.educationJson) : [],
           projects: parsed?.projectsJson ? JSON.parse(parsed.projectsJson) : [],
-          certifications: parsed?.certifications ? parsed.certifications.split(",").map((s) => s.trim()) : [],
+          certifications: parsed?.certifications ? parsed.certifications.split(",").map((s: string) => s.trim()) : [],
         },
         scores: {
           overallScore: score?.overallScore || 0,

@@ -54,16 +54,16 @@ export default function SettingsPage() {
       <div>
         <h1 className="text-2xl font-black text-white tracking-tight flex items-center space-x-3">
           <Cpu className="w-6 h-6 text-indigo-400" />
-          <span>AI Provider & System Architecture Settings</span>
+          <span>AI Screening & Evaluation System Settings</span>
         </h1>
         <p className="text-xs text-slate-400 mt-1">
-          Inspect model connection health, embedding pipeline status, and object storage configuration.
+          Inspect screening engine health, semantic embedding status, and resume storage configuration.
         </p>
       </div>
 
       {/* Primary & Fallback Models */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Gemini 2.5 Flash */}
+        {/* Primary Engine */}
         <div className="glass-card rounded-2xl p-6 border border-indigo-500/20">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -71,8 +71,8 @@ export default function SettingsPage() {
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Gemini 2.5 Flash</h3>
-                <p className="text-xs text-slate-400">Primary LLM & Embedding Engine</p>
+                <h3 className="text-base font-bold text-white">Primary Candidate Evaluation Engine</h3>
+                <p className="text-xs text-slate-400">Main Match Analysis & Parsing Engine</p>
               </div>
             </div>
             <span className="flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
@@ -83,17 +83,17 @@ export default function SettingsPage() {
 
           <div className="mt-5 space-y-2 text-xs font-mono text-slate-300">
             <div className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between">
-              <span className="text-slate-500">LLM Model:</span>
-              <span className="text-indigo-300">gemini-2.5-flash</span>
+              <span className="text-slate-500">Evaluation Engine:</span>
+              <span className="text-indigo-300">primary-evaluation-engine</span>
             </div>
             <div className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between">
-              <span className="text-slate-500">Embedding Model:</span>
-              <span className="text-cyan-300">text-embedding-004 (768-dim)</span>
+              <span className="text-slate-500">Semantic Matching:</span>
+              <span className="text-cyan-300">semantic-vector-matcher (Active)</span>
             </div>
           </div>
         </div>
 
-        {/* Groq Fallback */}
+        {/* High-Availability Backup Engine */}
         <div className="glass-card rounded-2xl p-6 border border-slate-800">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -101,30 +101,30 @@ export default function SettingsPage() {
                 <Cpu className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Groq SDK Engine</h3>
-                <p className="text-xs text-slate-400">Automatic Failover Provider</p>
+                <h3 className="text-base font-bold text-white">High-Availability Failover Engine</h3>
+                <p className="text-xs text-slate-400">Automatic Backup Evaluation System</p>
               </div>
             </div>
             <span className="flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>Standby Failover</span>
+              <span>Standby Ready</span>
             </span>
           </div>
 
           <div className="mt-5 space-y-2 text-xs font-mono text-slate-300">
             <div className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between">
-              <span className="text-slate-500">Fallback LLM:</span>
-              <span className="text-purple-300">llama-3.3-70b-versatile</span>
+              <span className="text-slate-500">Failover Engine:</span>
+              <span className="text-purple-300">backup-evaluation-engine</span>
             </div>
             <div className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between">
-              <span className="text-slate-500">Latency:</span>
+              <span className="text-slate-500">Processing Speed:</span>
               <span className="text-emerald-400">&lt; 300 ms response</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Cloudflare R2 & Default Formula Weights */}
+      {/* Cloud Store & Default Formula Weights */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Storage */}
         <div className="glass-card rounded-2xl p-6 border border-slate-800">
@@ -133,8 +133,8 @@ export default function SettingsPage() {
               <HardDrive className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">Object Storage Layer</h3>
-              <p className="text-xs text-slate-400">Cloudflare R2 / S3 Compatible</p>
+              <h3 className="text-base font-bold text-white">Encrypted Resume Repository</h3>
+              <p className="text-xs text-slate-400">Cloud & Local Disk Document Storage</p>
             </div>
           </div>
 

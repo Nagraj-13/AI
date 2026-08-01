@@ -143,7 +143,7 @@ export default function RecruiterDashboardPage() {
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">AI Engine</span>
           <p className="text-sm font-bold text-emerald-400 mt-2 flex items-center">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1.5" />
-            Gemini 2.5 + Groq
+            Intelligent AI Engine
           </p>
         </Card>
       </div>

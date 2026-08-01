@@ -39,6 +39,12 @@ export default function CandidateDetailModal({ candidate, onClose }: CandidateDe
             <p className="text-xs text-slate-400 mt-1">
               {candidate.email} • {candidate.phone} • {candidate.parsedResume.totalExperienceYears} Years Total Experience
             </p>
+            {candidate.jobTitle && (
+              <p className="text-xs text-indigo-300 font-semibold mt-1 flex items-center">
+                <span>Position Applied: {candidate.jobTitle}</span>
+                {candidate.jobDepartment && <span className="text-slate-400 ml-1">({candidate.jobDepartment})</span>}
+              </p>
+            )}
           </div>
 
           <div className="flex items-center space-x-3">

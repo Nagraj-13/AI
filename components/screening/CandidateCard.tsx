@@ -54,6 +54,16 @@ export default function CandidateCard({
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-0.5">{candidate.email} • {candidate.phone}</p>
+            
+            {candidate.jobTitle && (
+              <div className="mt-1.5 flex items-center">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 flex items-center space-x-1">
+                  <Briefcase className="w-3 h-3 text-indigo-400" />
+                  <span>Applied Position: {candidate.jobTitle}</span>
+                  {candidate.jobDepartment && <span className="text-slate-400">({candidate.jobDepartment})</span>}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 

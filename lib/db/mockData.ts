@@ -16,6 +16,8 @@ export interface MockJob {
 export interface MockCandidate {
   id: string;
   jobId: string;
+  jobTitle?: string;
+  jobDepartment?: string;
   name: string;
   email: string;
   phone: string;
