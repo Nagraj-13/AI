@@ -1,0 +1,24 @@
+SARAH JENKINS
+Austin, TX | (555) 345-6789 | sarah.jenkins@example.com | portfolio.sarahjenkins.dev
+
+SUMMARY
+Creative Senior Frontend Developer with 5 years of experience building modern, responsive, high-performance web applications using React, Next.js, TypeScript, and Tailwind CSS. Specialized in UI/UX design systems and state management.
+
+TECHNICAL SKILLS
+• Frontend Core: React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS, JavaScript (ES6+)
+• State & Data Fetching: Redux Toolkit, Zustand, TanStack Query (React Query)
+• Testing & Tools: Jest, React Testing Library, Cypress, Git, Figma, Webpack, Vite
+
+WORK EXPERIENCE
+
+Lead Frontend Engineer | PixelCraft Solutions (2021 - Present)
+• Led UI engineering team of 4 to design and ship customer-facing web dashboard used by 120,000+ daily active users.
+• Built reusable atomic UI component design system in Next.js & Tailwind CSS, reducing front-end development cycle time by 30%.
+• Achieved 98+ Google Lighthouse performance scores through aggressive image optimization, code splitting, and server component rendering.
+
+Frontend Developer | CloudApp Tech (2019 - 2021)
+• Developed interactive web features using React.js, Redux, and RESTful APIs.
+• Improved accessibility (WCAG 2.1 AA compliance) across 50+ core application views.
+
+EDUCATION
+B.S. in Software Engineering | University of Texas at Austin (2015 - 2019)

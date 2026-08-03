@@ -1,0 +1,22 @@
+JOB TITLE: Senior Backend Python & Cloud Engineer
+LOCATION: Seattle, WA / Hybrid
+DEPARTMENT: Infrastructure & Platform Engineering
+EMPLOYMENT TYPE: Full-Time
+
+JOB OVERVIEW
+Join our platform team to build scalable, resilient backend services and database systems supporting millions of API requests. You will design RESTful APIs, manage PostgreSQL schema migrations, implement Redis caching strategies, and automate cloud infrastructure deployments.
+
+KEY RESPONSIBILITIES
+• Develop microservices and RESTful / GraphQL APIs using Python (FastAPI, Django) and Node.js.
+• Design complex PostgreSQL database schemas, indexing strategies, and ORM abstractions.
+• Architect cloud infrastructure on AWS using Docker, Kubernetes (EKS), and Terraform.
+• Ensure system security, data encryption, and role-based access control across all API endpoints.
+
+REQUIRED QUALIFICATIONS
+• 5+ years of backend engineering experience with Python and relational databases.
+• Strong expertise in PostgreSQL, query optimization, and Redis caching.
+• Proven experience with containerization (Docker) and Kubernetes orchestration.
+• Solid knowledge of CI/CD pipelines (GitHub Actions, GitLab CI) and AWS services.
+
+PREFERRED QUALIFICATIONS
+• Experience in HR Tech, resume parsing pipelines, or high-concurrency SaaS applications.

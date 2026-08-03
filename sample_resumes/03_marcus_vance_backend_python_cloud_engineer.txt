@@ -1,0 +1,25 @@
+MARCUS VANCE
+Seattle, WA | (555) 456-7890 | marcus.vance@example.com | github.com/marcus-vance
+
+SUMMARY
+Senior Backend & Cloud Infrastructure Engineer with 7 years of expertise in Python, Node.js, PostgreSQL, Docker, AWS, and Microservices Architecture. Proven track record of building resilient distributed microservices handling millions of API requests daily.
+
+CORE COMPETENCIES
+- Backend Languages: Python (FastAPI, Django, Flask), Node.js, Go, SQL
+- Cloud & DevOps: AWS (EC2, ECS, S3, RDS, CloudFront), Docker, Kubernetes, Terraform, CI/CD
+- Databases: PostgreSQL, MySQL, Redis, MongoDB, Prisma ORM
+- Architecture: REST APIs, GraphQL, Microservices, Event-Driven Systems (Kafka, RabbitMQ)
+
+EXPERIENCE
+
+Senior Backend Engineer | CloudScale Systems (2020 - Present)
+- Designed and maintained high-throughput REST & GraphQL backend services handling 15M+ daily requests.
+- Migrated legacy monolithic architecture to containerized Kubernetes microservices on AWS, lowering cloud infrastructure expenditure by 35%.
+- Implemented robust PostgreSQL database indexing and query optimizations for complex multi-table joins.
+
+Backend Software Developer | Apex Solutions (2017 - 2020)
+- Developed secure authentication services and API endpoints using Python FastAPI and Node.js.
+- Configured automated CI/CD deployment pipelines using GitHub Actions and Docker.
+
+EDUCATION
+B.S. in Computer Engineering | University of Washington (2013 - 2017)

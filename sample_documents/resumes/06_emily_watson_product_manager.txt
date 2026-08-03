@@ -1,0 +1,24 @@
+EMILY WATSON
+Boston, MA | (555) 789-0123 | emily.watson@example.com | linkedin.com/in/emilywatson-pm
+
+SUMMARY
+Technical Product Manager with 5 years of experience leading cross-functional engineering, UX design, and data science teams to build SaaS software products. Passionate about user-centric product roadmap planning, metric analytics, and Agile sprints.
+
+SKILLS & SPECIALTIES
+• Product Management: Product Roadmap, User Story Mapping, Agile/Scrum, Sprint Planning, PRD Creation
+• Analytics & Tools: Jira, Confluence, Mixpanel, Amplitude, Figma, SQL, Tableau
+• Industry Focus: B2B SaaS, Artificial Intelligence, Recruiting & HR Tech Tools
+
+EXPERIENCE
+
+Senior Product Manager | TalentFlow Tech (2022 - Present)
+• Owned product strategy and execution for enterprise HR applicant tracking features used by over 300 corporate recruiting teams.
+• Defined product requirements (PRDs) for AI candidate match scoring feature, increasing recruiter workflow speed by 40%.
+• Managed two 6-person Agile engineering squads across 2-week sprint cycles.
+
+Product Manager | WebLaunch Media (2019 - 2022)
+• Launched customer feedback portal that grew user engagement metrics by 28% within 6 months.
+• Conducted 50+ customer discovery interviews to synthesize product backlog priorities.
+
+EDUCATION
+B.A. in Business Administration & Computer Science | Boston University (2015 - 2019)

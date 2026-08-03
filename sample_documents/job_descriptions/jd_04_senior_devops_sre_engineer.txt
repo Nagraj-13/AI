@@ -1,0 +1,22 @@
+JOB TITLE: Senior DevOps & Site Reliability Engineer
+LOCATION: Chicago, IL / Remote
+DEPARTMENT: Site Reliability & Infrastructure
+EMPLOYMENT TYPE: Full-Time
+
+JOB OVERVIEW
+We are seeking a Senior DevOps & Site Reliability Engineer to maintain and scale our multi-region cloud infrastructure. You will manage automated Kubernetes clusters, establish continuous integration and deployment (CI/CD) pipelines, and implement real-time monitoring and alert escalation.
+
+KEY RESPONSIBILITIES
+• Provision and maintain cloud resources on AWS using Infrastructure as Code (Terraform).
+• Build and optimize fast, secure CI/CD pipelines for Next.js, Node.js, and Python microservices.
+• Configure observability stacks using Prometheus, Grafana, Datadog, and ELK.
+• Maintain 99.99% system availability and participate in automated on-call escalation rotation.
+
+REQUIRED QUALIFICATIONS
+• 4+ years of hands-on experience in DevOps, SRE, or Infrastructure Engineering.
+• Deep knowledge of Kubernetes, Docker, Terraform, and AWS cloud ecosystem.
+• Strong shell scripting skills (Bash, Python, Go).
+• Demonstrated experience managing zero-downtime blue/green or canary deployments.
+
+PREFERRED QUALIFICATIONS
+• AWS Certified Solutions Architect or Certified Kubernetes Administrator (CKA).

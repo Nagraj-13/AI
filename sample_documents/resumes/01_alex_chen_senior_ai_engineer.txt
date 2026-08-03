@@ -1,0 +1,26 @@
+ALEX CHEN
+San Francisco, CA | (555) 234-5678 | alex.chen@example.com | github.com/alexchen-ai
+
+SUMMARY
+Senior Full-Stack AI Engineer with 6+ years of experience building scalable machine learning pipelines, LLM-powered enterprise web applications, and vector search engines. Expert in Python, Next.js, TypeScript, PyTorch, LangChain, and PostgreSQL.
+
+SKILLS
+• Programming: Python, TypeScript, JavaScript, SQL, C++
+• Frameworks & Libraries: Next.js, React, Node.js, PyTorch, Transformers, FastAPI, Express
+• AI & Vector Databases: OpenAI API, Gemini API, LangChain, Pinecone, Qdrant, Cosine Embeddings
+• Infrastructure & Storage: PostgreSQL, Redis, Docker, AWS (S3, EC2, Lambda), Vercel
+
+PROFESSIONAL EXPERIENCE
+
+Senior AI Engineer | NeuralScale Technologies (2022 - Present)
+• Architected a two-stage vector retrieval and LLM scoring pipeline processing 50,000+ candidate resumes monthly with 94% accuracy.
+• Built full-stack Next.js 15 dashboard with real-time SSE progress streaming and automated fallback to secondary LLM endpoints.
+• Reduced LLM latency by 45% using Redis embedding caching and quantized model inference.
+
+Full-Stack Developer | DataPulse Inc. (2019 - 2022)
+• Developed responsive web applications using React, TypeScript, and Node.js for high-volume enterprise analytics.
+• Integrated PostgreSQL with Prisma ORM, optimizing complex relational queries and database indexing for 3x throughput.
+
+EDUCATION
+B.S. in Computer Science | Stanford University (2015 - 2019)
+• Focus on Artificial Intelligence & Distributed Systems

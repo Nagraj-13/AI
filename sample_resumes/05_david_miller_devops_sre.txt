@@ -1,0 +1,26 @@
+DAVID MILLER
+Chicago, IL | (555) 678-9012 | david.miller@example.com | github.com/dmiller-ops
+
+SUMMARY
+DevOps & Site Reliability Engineer with 6 years of experience implementing Infrastructure as Code (IaC), container orchestration, zero-downtime deployment pipelines, and cloud security monitoring.
+
+CORE SKILLS
+- Infrastructure as Code: Terraform, Ansible, CloudFormation
+- Container Orchestration: Kubernetes, Docker, Helm
+- CI/CD Pipelines: GitHub Actions, GitLab CI, Jenkins
+- Monitoring & Logging: Prometheus, Grafana, Datadog, ELK Stack
+- Cloud & Scripting: AWS, GCP, Bash, Python, Go
+
+WORK EXPERIENCE
+
+Senior DevOps Engineer | InfraCloud Inc. (2021 - Present)
+- Automated multi-region AWS Kubernetes (EKS) cluster provisioning using Terraform, serving 99.99% uptime SLA.
+- Reduced build deployment pipeline execution time from 25 minutes to 4 minutes using GitHub Actions runner optimization.
+- Implemented Datadog alert triggers and automated incident escalation protocols.
+
+DevOps Systems Admin | NetWorks Global (2018 - 2021)
+- Managed 200+ Linux servers (Ubuntu/RHEL) across AWS and hybrid environments.
+- Implemented SSL/TLS automated certificate renewal scripts and vulnerability scanning tools.
+
+EDUCATION
+B.S. in Information Technology | University of Illinois Chicago (2014 - 2018)

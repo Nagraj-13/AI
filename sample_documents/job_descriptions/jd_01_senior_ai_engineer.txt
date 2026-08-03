@@ -1,0 +1,25 @@
+JOB TITLE: Senior AI & Machine Learning Engineer
+LOCATION: San Francisco, CA / Remote
+DEPARTMENT: Engineering & AI Innovation
+EMPLOYMENT TYPE: Full-Time
+
+JOB OVERVIEW
+We are seeking an experienced Senior AI & Machine Learning Engineer to lead the design and deployment of our next-generation AI resume screening and candidate evaluation platform. In this role, you will architect retrieval-augmented generation (RAG) pipelines, optimize large language model (LLM) inference, and integrate intelligent search and ranking capabilities into our web platform.
+
+KEY RESPONSIBILITIES
+• Design, build, and deploy end-to-end LLM scoring and candidate matching pipelines.
+• Implement high-performance vector search algorithms using Pinecone, Qdrant, or Pgvector for semantic resume retrieval.
+• Develop full-stack features using Next.js, React, TypeScript, and Python (FastAPI/Flask).
+• Optimize prompt engineering and model fine-tuning workflows for maximum accuracy and minimal latency.
+• Collaborate with product managers and backend engineers to integrate AI models into microservices.
+
+REQUIRED QUALIFICATIONS
+• 4+ years of professional experience in software engineering and applied AI/ML.
+• Strong proficiency in Python, TypeScript, and modern JS frameworks (Next.js / React).
+• Direct hands-on experience with LLM APIs (OpenAI, Google Gemini, Anthropic) and vector databases.
+• Solid understanding of relational databases (PostgreSQL, Prisma ORM) and caching (Redis).
+• Experience deploying containerized applications with Docker and AWS.
+
+PREFERRED QUALIFICATIONS
+• B.S. or M.S. in Computer Science, Artificial Intelligence, or related technical field.
+• Published work or open-source contributions in NLP or RAG systems.

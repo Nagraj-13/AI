@@ -1,0 +1,25 @@
+PRIYA SHARMA
+New York, NY | (555) 567-8901 | priya.sharma@example.com | linkedin.com/in/priyasharma-ml
+
+SUMMARY
+Data Scientist & Machine Learning Specialist with 4 years of experience building predictive models, NLP text classifiers, and recommendation engines. Proficient in Python, PyTorch, Scikit-Learn, SQL, and LLM fine-tuning.
+
+TECHNICAL SKILLS
+- Machine Learning & AI: PyTorch, TensorFlow, Scikit-Learn, XGBoost, NLP, Transformers, LLM Fine-Tuning
+- Languages & Tools: Python, R, SQL, Pandas, NumPy, Jupyter, Git
+- Big Data & Cloud: Apache Spark, Snowflake, AWS SageMaker, Docker
+
+PROFESSIONAL EXPERIENCE
+
+Data Scientist | DataVision AI (2022 - Present)
+- Developed NLP sentiment and entity extraction model for customer support tickets, improving automated routing accuracy to 91%.
+- Built customer churn prediction model using XGBoost that saved an estimated $1.2M in annual recurring revenue.
+- Conducted A/B experimentation and statistical modeling for new feature releases.
+
+Junior Data Analyst | FinAnalytics Group (2020 - 2022)
+- Extracted and cleaned multi-gigabyte datasets using SQL queries and Python Pandas.
+- Designed interactive Tableau and PowerBI executive dashboards for financial metric tracking.
+
+EDUCATION
+M.S. in Data Science | Columbia University (2018 - 2020)
+B.S. in Statistics | NYU (2014 - 2018)

@@ -1,0 +1,24 @@
+JOB TITLE: Lead Frontend React Developer
+LOCATION: Austin, TX / Remote
+DEPARTMENT: Product Engineering
+EMPLOYMENT TYPE: Full-Time
+
+JOB OVERVIEW
+We are looking for a highly skilled Lead Frontend React Developer to spearhead our UI architecture. You will be responsible for creating intuitive, lightning-fast, visually stunning user interfaces for enterprise hiring managers and recruiters using React 19, Next.js 15, TypeScript, and Tailwind CSS.
+
+KEY RESPONSIBILITIES
+• Lead frontend architecture and establish visual design systems and reusable component libraries.
+• Build responsive, accessible (WCAG compliant) dashboards and interactive data visualizations.
+• Optimize application performance, rendering speeds, and bundle sizes across web and mobile viewports.
+• Mentor junior frontend developers and enforce high standards of code quality and component testing.
+
+REQUIRED QUALIFICATIONS
+• 5+ years of software engineering experience focusing on frontend web development.
+• Mastery of React, Next.js, TypeScript, HTML5, CSS3, and Tailwind CSS.
+• Deep understanding of modern state management (Zustand, Redux, React Query).
+• Proven track record of optimizing Web Vitals and performance scores.
+• Experience writing automated unit and integration tests (Jest, React Testing Library, Cypress).
+
+PREFERRED QUALIFICATIONS
+• Experience with dark mode, glassmorphism, and modern UI micro-animations.
+• Familiarity with Figma design file translation.
